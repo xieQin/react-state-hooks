@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Test from './components/test'
 import Calculator from './components/calculator'
+import Example from './components/example'
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Test name="hello world"/>
       </header>
       <Calculator/>
+      <Example/>
     </div>
   );
 }
