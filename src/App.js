@@ -1,7 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Test from './test'
+import Test from './components/test'
+import Calculator from './components/calculator'
 
 function App() {
   return (
@@ -19,9 +20,9 @@ function App() {
         >
           Learn React
         </a>
-        <Test name="hello"/>
-        <Test name="world"/>
+        <Test name="hello world"/>
       </header>
+      <Calculator/>
     </div>
   );
 }
