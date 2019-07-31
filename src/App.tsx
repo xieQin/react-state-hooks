@@ -4,7 +4,7 @@ import Test from './components/test'
 import Calculator from './components/calculator'
 import Example from './components/example'
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <header className="App-header">
@@ -20,8 +20,8 @@ function App() {
         >
           Learn React
         </a>
-        <Test name="hello world"/>
       </header>
+      <Test name="hello world"/>
       <Calculator/>
       <Example/>
     </div>

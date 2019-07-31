@@ -1,12 +1,11 @@
-//no-unused-vars
 import * as React from 'react';
 import useTime from '../hooks/usetime';
 
 const Nowtime = () => {
-  const times = useTime()
+  const [time, setTime] = useTime()
   return (
     <div>
-      <div>Now time is {times}</div>
+      <div>Now time is {time}</div>
     </div>
   )
 }
