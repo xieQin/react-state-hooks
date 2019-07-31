@@ -1,17 +1,27 @@
-import React from 'react';
+import * as React from 'react';
+import { ChangeEvent} from 'react';
 
-class Temperature extends React.Component {
-  constructor(props) {
+interface IProps {
+  onChange: (value: string, name: string) => void,
+  name: string,
+  temperature: string
+}
+interface IState {
+
+}
+
+class Temperature extends React.Component<IProps, IState> {
+  constructor(props: IProps) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
   }
   
-  handleChange (event) {
+  handleChange (event: ChangeEvent<HTMLInputElement>) {
     this.props.onChange(event.target.value, this.props.name)
   }
 
   render () {
-    const title = {
+    const title: any = {
       'c': 'celsius',
       'f': 'fahrenheit'
     }

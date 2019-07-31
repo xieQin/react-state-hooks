@@ -1,14 +1,25 @@
-import React from 'react';
+import * as React from 'react';
 import InputComponent from './input'
 
-class Test extends React.Component {
+interface IProps {
+  name: string
+}
+interface IState {
+  time: Date,
+  isToggled: Boolean
+}
 
-  constructor (props) {
+class Test extends React.Component<IProps, IState> {
+
+  public state = {
+    time: new Date(),
+    isToggled: false
+  }
+
+  public timeId: any = null
+
+  constructor (props: IProps) {
     super(props);
-    this.state = {
-      time: new Date(),
-      isToggled: false
-    };
     this.handleClick = this.handleClick.bind(this);
   }
 

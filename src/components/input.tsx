@@ -1,22 +1,30 @@
-import React from 'react';
+import * as React from 'react';
+import { ChangeEvent } from 'react';
 
-class InputComponent extends React.Component {
-  constructor(props) {
+interface IProps {
+
+}
+interface IState {
+
+}
+
+class InputComponent extends React.Component<IProps, IState> {
+  public state = {
+    value: 'test input'
+  }
+  constructor(props: IProps) {
     super(props)
-    this.state = {
-      value: 'test input'
-    }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  handleChange (event) {
+  handleChange (event: ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
     this.setState({
       value: event.target.value
     })
   }
 
-  handleSubmit (event) {
+  handleSubmit (event: ChangeEvent<HTMLFormElement>) {
     console.log(this.state.value);
     event.preventDefault();
   }

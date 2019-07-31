@@ -1,36 +1,45 @@
-import React from 'react';
+import * as React from 'react';
 import Temperature from './temperature';
 import Result from './result';
 
-function toCelsius(fahrenheit) {
+interface IProps {
+
+}
+
+interface IState {
+  temperature: string,
+  name: string
+}
+
+function toCelsius(fahrenheit: number) {
   return (fahrenheit - 32) * 5 / 9;
 }
 
-function toFahrenheit(celsius) {
+function toFahrenheit(celsius: number) {
   return (celsius * 9 / 5) + 32;
 }
 
-const tryConvert = (temperature, convert) => {
+const tryConvert = (temperature: string, convert: (num: number) => number) => {
   const input = parseFloat(temperature);
   if (Number.isNaN(input)) {
     return '';
   }
-  const output = convert(input);
-  const rounded = Math.round(output * 1000) / 1000;
+  const output:number = convert(input);
+  const rounded:number = Math.round(output * 1000) / 1000;
   return rounded.toString();
 }
 
-class Calculator extends React.Component {
-  constructor (props) {
+class Calculator extends React.Component<IProps, IState> {
+  public state = {
+    temperature: '',
+    name: 'c'
+  }
+  constructor (props: IProps) {
     super(props);
-    this.state = {
-      temperature: '',
-      name: 'c'
-    }
     this.handleTemperature = this.handleTemperature.bind(this)
   }
 
-  handleTemperature (temperature, name) {
+  handleTemperature (temperature: string, name: string) {
     this.setState({
       temperature,
       name

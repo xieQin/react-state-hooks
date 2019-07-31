@@ -1,6 +1,6 @@
 //no-unused-vars
-import React from 'react';
-import useTime from './usetime';
+import * as React from 'react';
+import useTime from '../hooks/usetime';
 
 const Nowtime = () => {
   const times = useTime()
