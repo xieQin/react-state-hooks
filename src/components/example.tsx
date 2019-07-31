@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import Nowtime from './nowtime'
-import { useStore } from '../models/index'
+import { useStore } from '../models'
 
 const Example = () => {
   const [count, setCount] = useState(0);
