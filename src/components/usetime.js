@@ -12,7 +12,7 @@ const useTime = () => {
       clearInterval(id)
     }
   })
-  return time
+  return [time, setTime]
 }
 
 export default useTime
