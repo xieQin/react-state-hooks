@@ -7,7 +7,7 @@ const Example = () => {
   const [count, setCount] = useState(0);
   const [nums, setNums] = useState(100);
   const [state, actions] = useStore('Test')
-  console.log(state, actions)
+  console.log(state, actions, 'example')
   useEffect (() => {
     document.title = `You clicked ${count} times`
   });
