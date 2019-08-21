@@ -43,6 +43,35 @@ class InputComponent extends React.Component<IProps, IState> {
       </form>
     )
   }
+
+  async asyncFunc1 () {
+    return new Promise ((resolve, reject) => {
+      try {
+        console.log('promise 1')
+        resolve(1111)
+      } catch (err) {
+        reject(err)
+      }
+    })
+  }
+
+  async asyncFunc2 () {
+    return new Promise ((resolve, reject) => {
+      try {
+        console.log('promise 2')
+        resolve(22222)
+      } catch (err) {
+        reject(err)
+      }
+    })
+  }
+
+  async componentDidMount () {
+    let res1 = await this.asyncFunc1()
+    console.log(res1)
+    let res2 = await this.asyncFunc2()
+    console.log(res2)
+  }
 }
 
 export default InputComponent
